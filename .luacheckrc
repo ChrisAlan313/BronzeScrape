@@ -8,14 +8,10 @@ files = {
 }
 
 globals = {
-  -- Common WoW API globals
-  "CreateFrame", "GetAddOnMetadata", "GetAddOnInfo", "InterfaceOptions_AddCategory",
-  "GetPlayerInfoByGUID", "C_Timer", "UnitName", "UnitClass", "IsAddOnLoaded",
-  -- Common libraries
-  "LibStub", "AceGUI", "AceGUIWidget-CheckBox",
+-- Will be filled as required
 }
 
 exclude_files = { "vendor/**", "libs/**" }
 
--- Allow unused variables that start with underscore
-allow_unused_args = true
+-- May be changed to true later.
+allow_unused_args = false
