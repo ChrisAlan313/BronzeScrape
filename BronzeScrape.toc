@@ -1,0 +1,11 @@
+## Interface: 30300
+## Title: BronzeScrape
+## Notes: Fetching talent, spellbook and glyph information for theorycrafting.
+## Author: Chris Booty
+## Version: 0.0.1
+## RequiredDeps:
+## X-Curse-Project-ID: 999999
+## SavedVariables:
+## SavedVariablesPerCharacter:
+
+BronzeScrape.lua
