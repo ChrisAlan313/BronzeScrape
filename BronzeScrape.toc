@@ -4,4 +4,6 @@
 ## Author: Chris Booty
 ## Version: 0.0.1
 
+core/schema.lua
+wow/dumper.lua
 BronzeScrape.lua

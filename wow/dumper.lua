@@ -1,6 +1,4 @@
 
-SLASH_BRONZESCRAPE1 = "/bronzescrape-dump"
-
 -- Raw talent dump for WotLK-era API (3.3.x).
 -- Stores the result in a SavedVariables table (per-character) and also returns it.
 --
@@ -13,7 +11,7 @@ SLASH_BRONZESCRAPE1 = "/bronzescrape-dump"
 
 BronzeScrapeDB = BronzeScrapeDB or {}
 
-local function now_utc-ish()
+local function now_utc_ish()
   -- WoW Lua has date(); WotLK supports it. Keep it simple.
   return date("!%Y-%m-%dT%H:%M:%SZ")
 end
@@ -21,7 +19,7 @@ end
 function BronzeScrape_DumpTalentsRaw()
   local dump = {
     meta = {
-      captured_at = now_utc-ish(),
+      captured_at = now_utc_ish(),
       player = UnitName("player"),
       class = select(2, UnitClass("player")), -- e.g. "SHAMAN"
       level = UnitLevel("player"),
@@ -95,13 +93,3 @@ function BronzeScrape_DumpTalentsRaw()
   return dump
 end
 
-SlashCmdList["BRONZESCRAPE"] = function(msg)
-    msg = (msg or ""):lower()
-
-    if msg == "talents" then
-        BronzeScrape_DumpTalentsRaw()
-        print("BronzeScrape: Exported talents to BronzeScrapeDB.talents")
-    else
-        print("BronzeScrape: Specify what to dump: talents")
-    end
-end

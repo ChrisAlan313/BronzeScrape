@@ -1,4 +1,4 @@
-local SCHEMA_VERSION = 1
+SCHEMA_VERSION = 1
 
 local meta = {}
 
