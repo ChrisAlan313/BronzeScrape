@@ -9,7 +9,13 @@
 --   /run BronzeScrape_DumpTalentsRaw()
 -- Then log out (or /reload) to flush SavedVariables to disk.
 
+-- luacheck: globals BronzeScrapeDB DEFAULT_CHAT_FRAME date UnitName UnitClass UnitLevel GetNumTalentTabs
+-- luacheck: globals GetTalentTabInfo GetNumTalents GetTalentInfo GetTalentPrereqs GetTalentLink GameTooltip UIParent
+-- luacheck: globals BronzeScrape_DumpTalentsRaw
+
 BronzeScrapeDB = BronzeScrapeDB or {}
+
+DEFAULT_CHAT_FRAME:AddMessage("BronzeScrape: wow/dumper.lua loaded")
 
 local function now_utc_ish()
   -- WoW Lua has date(); WotLK supports it. Keep it simple.
@@ -89,7 +95,7 @@ function BronzeScrape_DumpTalentsRaw()
   BronzeScrapeDB.raw_talents = dump
   BronzeScrapeDB.raw_talents_last_updated = dump.meta.captured_at
 
-  DEFAULT_CHAT_FRAME:AddMessage("BronzeScrape: dumped raw talents to BronzeScrapeDB.raw_talents (logout or /reload to save).")
+  DEFAULT_CHAT_FRAME:AddMessage("BronzeScrape: dumped raw talents to BronzeScrapeDB.raw_talents.")
   return dump
 end
 

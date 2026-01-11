@@ -11,6 +11,10 @@ API and the `wow` functions which are related to the WoW API.
 -- core/schema.lua and wow/dumper.lua are loaded via the .toc file
 -- They expose globals (e.g. SCHEMA_VERSION, BronzeScrape_DumpTalentsRaw)
 
+-- luacheck: globals SLASH_BRONZESCRAPE1 SlashCmdList BronzeScrape_DumpTalentsRaw DEFAULT_CHAT_FRAME
+
+DEFAULT_CHAT_FRAME:AddMessage("BronzeScrape: BronzeScrape.lua loaded")
+
 SLASH_BRONZESCRAPE1 = "/bronzescrape-dump"
 
 SlashCmdList["BRONZESCRAPE"] = function(msg)
